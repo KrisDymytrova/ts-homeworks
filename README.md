@@ -1,17 +1,3 @@
-# TS-Homeworks
+**ДЗ 2. Get string description**
 
-This project contains homework assignments for TypeScript course.
-
-## Project Setup
-
-To run this project, follow these steps:
-
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
-
-## Technologies Used
-
-- TypeScript
-- Vite
-- WebStorm
+Напишіть функцію, що приймає об'єкт з інформацією про товар (назва, ціна, наявність) і повертає рядок типу "Товар: Назва, Ціна: Х грн., В наявності: Так/Ні".
