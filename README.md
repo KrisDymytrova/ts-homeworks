@@ -1,17 +1,12 @@
-# TS-Homeworks
+**ДЗ 7. TS Написати функцію reverseArray**
 
-This project contains homework assignments for TypeScript course.
+Функція приймає масив як аргумент, а перевертає його Array.prototype.reverse
 
-## Project Setup
+ВАЖЛИВО
 
-To run this project, follow these steps:
+Функція повинна змінювати вхідний масив, а не створювати новий 
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
-
-## Technologies Used
-
-- TypeScript
-- Vite
-- WebStorm
+<pre>const arr = [1, 2, 3]
+const reversedArr = reverseArray(arr)
+reversedArr === arr // true
+</pre>
