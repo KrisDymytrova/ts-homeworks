@@ -1,17 +1,24 @@
-# TS-Homeworks
+**ДЗ 8. TS Перевірка рядка на заборонені слова з виділенням**
 
-This project contains homework assignments for TypeScript course.
+Напиши функцію highlightForbiddenWords, яка приймає рядок і масив заборонених слів. Якщо знаходить у рядку заборонене слово, то обгортає його в тег <del>, який буде закреслювати це слово.
 
-## Project Setup
+Функція повинна повертати оновлений рядок, готовий для демонстрації в HTML. Створи також просту HTML-сторінку для відображення результату.
 
-To run this project, follow these steps:
+**Вимоги до функції:**
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
+Функція повинна приймати два параметри:
+text: string — рядок, який потрібно перевірити.
+forbiddenWords: string[] — масив заборонених слів.
+Функція повинна повернути оновлений рядок, в якому всі знайдені заборонені слова будуть обгорнуті в тег <del>.
 
-## Technologies Used
+<pre>const text = "This is a test sentence with some bad words.";
+const forbiddenWords = ["bad", "test"];
+const result = highlightForbiddenWords(text, forbiddenWords);
+console.log(result); // "This is a <del>test</del> sentence with some <del>bad</del> words."
+</pre>
 
-- TypeScript
-- Vite
-- WebStorm
+**Завдання:**
+
+1. Реалізуй функцію highlightForbiddenWords на TypeScript.
+2. Додай HTML-інтерфейс, який дозволяє ввести рядок і заборонені слова.
+3. Реалізуй логіку оновлення DOM-дерева, щоб відобразити змінений рядок із закресленими забороненими словами.

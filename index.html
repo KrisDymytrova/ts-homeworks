@@ -1,11 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite + TS</title>
-  </head>
-  <body>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+</head>
+<body>
+<h2>Введіть текст:</h2>
+<textarea id="textInput" rows="4" cols="50"></textarea>
+
+<h2>Заборонені слова (через кому):</h2>
+<input type="text" id="forbiddenWordsInput"/>
+
+<button id="highlightButton">Закреслити</button>
+
+<h2>Результат:</h2>
+<div id="result"></div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
