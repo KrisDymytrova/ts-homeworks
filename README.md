@@ -1,17 +1,9 @@
-# TS-Homeworks
+ДЗ 5. TS: Deep Copy
 
-This project contains homework assignments for TypeScript course.
+Напиши функцію для рекурсивного копіювання об'єкта, враховуючи вкладені об'єкти та масиви.
 
-## Project Setup
-
-To run this project, follow these steps:
-
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
-
-## Technologies Used
-
-- TypeScript
-- Vite
-- WebStorm
+<pre> const original = { a: 1, b: { c: 2 }, d: [3, 4] };
+const copy = deepClone(original);
+// original !== copy
+// original.b !== copy.b
+// original.d !== copy.d </pre>
