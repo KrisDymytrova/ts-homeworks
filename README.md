@@ -1,17 +1,25 @@
-# TS-Homeworks
+**1. Розширення та об'єднання інтерфейсів**
 
-This project contains homework assignments for TypeScript course.
+   Створи два інтерфейси: Address з полями street, city, zipCode і User з полями name та age.
+   Створи третій інтерфейс UserWithAddress, який об'єднує User і Address.
+   Додай в цей новий інтерфейс поле email та протестуй його.
 
-## Project Setup
+**2. Створення типів для даних із вкладеними інтерфейсами**
 
-To run this project, follow these steps:
+   Опиши інтерфейс Product із такими полями: name (рядок), price (число), category (об'єкт, що містить categoryName і categoryId).
+   Додай інтерфейс Order, який містить orderId, userId і список продуктів (масив Product).
+   Створи тип для масиву таких замовлень і змоделюй кілька прикладів.
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
+**3. Обов'язкові та необов'язкові поля**
 
-## Technologies Used
+   Створи інтерфейс Person, який містить обов'язкові поля firstName, lastName і необов'язкове поле middleName.
+   Напиши функцію, яка приймає параметром об'єкт типу Person і повертає рядок, де зібрані повне ім'я, якщо middleName існує.
 
-- TypeScript
-- Vite
-- WebStorm
+**4. Створення інтерфейсу для зчитування налаштувань**
+
+   Опиши інтерфейс Settings, який містить поля для конфігурації програми:
+*    theme: рядок (може бути "light" або "dark").
+*    notifications: булеве значення.
+*    autoSave: об'єкт із полями enabled (булеве значення) і interval (число).
+
+   Напиши функцію applySettings, яка приймає об'єкт типу Settings і виконує дії залежно від значень налаштувань (наприклад, виводить повідомлення про ввімкнення/вимкнення повідомлень).
