@@ -1,17 +1,33 @@
-# TS-Homeworks
+**ДЗ 12. Управління Замовленнями з Використанням enum**
 
-This project contains homework assignments for TypeScript course.
+**Опис**
 
-## Project Setup
+Уявімо, що ти створюєш систему для управління замовленнями в інтернет-магазині. В цій системі тобі потрібно використовувати enum для представлення різних статусів замовлення та типів оплати.
 
-To run this project, follow these steps:
+**Деталі**
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
+Створити enum OrderStatus, який представлятиме можливі статуси замовлення:
 
-## Technologies Used
+* Pending — замовлення очікує підтвердження.
+* Processing — замовлення в обробці.
+* Shipped — замовлення відправлено.
+* Delivered — замовлення доставлено.
+* Cancelled — замовлення скасовано.
 
-- TypeScript
-- Vite
-- WebStorm
+Створити enum PaymentType, який представлятиме типи оплати:
+
+* CreditCard — оплата кредитною карткою.
+* PayPal — оплата через PayPal.
+* BankTransfer — оплата через банківський переказ.
+* CashOnDelivery — оплата при доставці.
+
+Створити інтерфейс Order, який містить поля:
+
+* id — унікальний ідентифікатор замовлення (типу string).
+* amount — загальна сума замовлення (типу number).
+* status — статус замовлення (типу OrderStatus).
+* paymentType — тип оплати (типу PaymentType).
+
+Створити декілька замовлень для тестування системи, використовуючи OrderStatus та PaymentType.
+Написати функцію updateOrderStatus, яка приймає order: Order і status: OrderStatus, оновлює статус замовлення, а також виводить у консоль повідомлення про зміну статусу.
+Написати функцію getOrdersByStatus, яка приймає масив orders: Order[] і status: OrderStatus, і повертає всі замовлення з відповідним статусом.
