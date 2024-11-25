@@ -1,24 +1,5 @@
-enum OrderStatus {
-    Pending = 'Pending',
-    Processing = 'Processing',
-    Shipped = 'Shipped',
-    Delivered = 'Delivered',
-    Cancelled = 'Cancelled'
-}
-
-enum PaymentType {
-    CreditCard = 'CreditCard',
-    PayPal = 'PayPal',
-    BankTransfer = 'BankTransfer',
-    CashOnDelivery = 'CashOnDelivery'
-}
-
-interface Order {
-    id: string;
-    amount: number;
-    status: OrderStatus;
-    paymentType: PaymentType;
-}
+import { OrderStatus, PaymentType } from './OrderEnums';
+import { Order } from './OrderInterfaces';
 
 const orders: Order[] = [
     { id: '1', amount: 1000, status: OrderStatus.Processing, paymentType: PaymentType.CreditCard },
@@ -27,9 +8,14 @@ const orders: Order[] = [
     { id: '4', amount: 300, status: OrderStatus.Delivered, paymentType: PaymentType.CashOnDelivery },
 ];
 
-const updateOrderStatus = (order: Order, status: OrderStatus): void => {
-    order.status = status;
-    console.log(`Статус замовлення з ID ${order.id} оновлено до: ${status}`);
+const updateOrderStatus = (
+    order: Order,
+    getStatus: (currentStatus: OrderStatus) => OrderStatus
+): Order => {
+    const newStatus = getStatus(order.status);
+    const updatedOrder = { ...order, status: newStatus };
+    console.log(`Статус замовлення з ID ${order.id} оновлено до: ${newStatus}`);
+    return updatedOrder;
 };
 
 const getOrdersByStatus = (orders: Order[], status: OrderStatus): Order[] => {
@@ -38,7 +24,13 @@ const getOrdersByStatus = (orders: Order[], status: OrderStatus): Order[] => {
 
 // Приклад використання:
 
-updateOrderStatus(orders[0], OrderStatus.Shipped); // Статус замовлення з ID 1 оновлено до: Shipped
+const updatedOrder = updateOrderStatus(orders[0], currentStatus => {
+    if (currentStatus === OrderStatus.Processing) {
+        return OrderStatus.Shipped;
+    }
+    return currentStatus;
+});
+console.log('Оновлене замовлення:', updatedOrder);
 
-const shippedOrders = getOrdersByStatus(orders, OrderStatus.Shipped);
-console.log('Замовлення зі статусом Shipped:', shippedOrders); // [{ id: '1', amount: 1000, status: OrderStatus.Shipped, paymentType: PaymentType.CreditCard }, { id: '2', amount: 2500, status: OrderStatus.Shipped, paymentType: PaymentType.BankTransfer }]
+const pendingOrders = getOrdersByStatus(orders, OrderStatus.Pending);
+console.log('Замовлення зі статусом Pending:', pendingOrders);
